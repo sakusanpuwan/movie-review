@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import api from './api/axiosConfig';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/home/Home';
 
 function App() {
 
@@ -18,18 +21,19 @@ function App() {
 
   }
 
-  const getTest = () => {
-    console.log("Hi");
-  }
-
   useEffect(() => {
     getMovies();
-    getTest();
   },[])
 
   return (
     <div className="App">
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route path='/' element={<Home movies={movies}/>}></Route>
 
+
+          </Route>
+        </Routes>
     </div>
   );
 }
