@@ -5,7 +5,7 @@ import React from 'react'
 const Layout = () => {
   return (
     <main>
-        <Outlet/>
+        <Outlet/> {/* This element will be replaced by the child render element  */}
     </main>
   )
 }

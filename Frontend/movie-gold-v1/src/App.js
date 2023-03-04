@@ -31,12 +31,9 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
-        <Route path='/' element={<Layout/>}>
+        <Route path='/' element={<Layout/>}> {/* Layout is needed for nested routes  */}
           <Route path='/' element={<Home movies={movies}/>}></Route>
-          {/* path='/Trailer/:ytTrailerId where ytTrailerId is parameter  */}
-          <Route path='/Trailer/:ytTrailerId' element={<Trailer/>}></Route>
-
-
+          <Route path='/Trailer/:ytTrailerId' element={<Trailer/>}></Route> {/* path='/Trailer/:ytTrailerId where ytTrailerId is parameter  */}
         </Route>
       </Routes>
     </div>
